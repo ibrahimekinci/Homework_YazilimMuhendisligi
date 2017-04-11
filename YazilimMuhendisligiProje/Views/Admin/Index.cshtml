@@ -1,0 +1,76 @@
+﻿@model IEnumerable<YazilimMuhendisligiProje.Models.TestItemModels>
+
+@{
+    ViewBag.Title = "Index";
+    int i = 0;
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@foreach (var item in Model)
+{
+    i++;
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)    @i
+            </th>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+        </tr>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OptionA)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptionA)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OptionB)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptionB)
+            </td>
+        </tr>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.OptionC)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptionC)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OptionD)
+            </th>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OptionD)
+            </td>
+        </tr>
+    </table>
+}

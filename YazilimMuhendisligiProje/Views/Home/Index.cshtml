@@ -1,0 +1,112 @@
+﻿@model IEnumerable<YazilimMuhendisligiProje.Models.TestItemModels>
+
+@{
+    ViewBag.Title = "Index";
+    int i = 0;
+}
+<div class="DivTest">
+    <h2>Testi Doldurunuz</h2>
+    @foreach (var item in Model)
+    {
+        i++;
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question)    @i
+                </th>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Question)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td></td>
+
+            </tr>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.OptionA)
+                </th>
+                <td>
+                    @Html.RadioButton(i.ToString() + "X", "A", false)@Html.Label("X")
+                    @Html.RadioButton(i.ToString() + "XX", "A", false)@Html.Label("XX")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptionA)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OptionB)
+                </th>
+                <td>
+                    @Html.RadioButton(i.ToString() + "X", "B", false)@Html.Label("X")
+                    @Html.RadioButton(i.ToString() + "XX", "B", false)@Html.Label("XX")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptionB)
+                </td>
+
+            </tr>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.OptionC)
+                </th>
+                <td>
+                    @Html.RadioButton(i.ToString() + "X", "C", false)@Html.Label("X")
+                    @Html.RadioButton(i.ToString() + "XX", "C", false)@Html.Label("XX")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptionC)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OptionD)
+                </th>
+                <td>
+                    @Html.RadioButton(i.ToString() + "X", "D", false)@Html.Label("X")
+                    @Html.RadioButton(i.ToString() + "XX", "D", false)@Html.Label("XX")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptionD)
+                </td>
+            </tr>
+        </table>
+    }
+    <input type="button" value="Testi Bitir" id="btnResultGet">
+</div>
+<div class="DivResult">
+    <div class="DivResultA">
+        sarı için açıklama tavsiye
+    </div>
+    <div class="DivResultB">
+        mavi
+    </div>
+    <div class="DivResultC">
+        kırmızı
+    </div>
+    <div class="DivResultD">
+        yeşil
+    </div>
+    <input type="text" name="mail" />
+    <input type="button" value="Sonucu Email Olarak Gönder" id="btnEmailSend">
+</div>
+<div class="DivEmailSend">
+    eposta başarıyla gönderildi.
+</div>
+@Html.Hidden("QuestionCount", i.ToString())
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/Site/Index.js"></script>
